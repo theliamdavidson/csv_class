@@ -12,6 +12,8 @@ using namespace std;
 class Write{
 
     private:
+        vector<string> fname = {"Liam", "Nicole", "Ryan", "Jack", "Robert", "Barbra",  "Alfred", "Ray", "Jane"};
+        vector<string> lname = {"Davidson", "Rodriguez", "Smith", "Doe", "Brown", "Johnson", "Gaimon", "Nieves", "Wu"};
         vector<string> create = {"Right subclavian", "Right Brachial", "Right Proximal Radial",
                                 "Right Proximal Ulnar", "Right Distal Radial","Right Distal Ulnar",
                                 "Right 1st", "Right 2nd", "Right 3rd", "Right 4th", "Left subclavian",
@@ -41,7 +43,9 @@ class Write{
             fstream fout;        
             fout.open(newFilename, ios::out | ios::app);
             // Anterograde pulsatility index, Anterograde volume flow, Retrograde volume flow, Retrograde pulsatility index
-
+            temp = rand() % 101 + 100;
+            int2str = to_string(temp);
+            fout << lname[rand() % 10] << ',' << fname[rand() % 10] << ',' << int2str << "\n";
             for(int i = 0; i < 67; i++){
                 temp = rand() % 10000000 + 10000000;
                 int2str = to_string(temp);

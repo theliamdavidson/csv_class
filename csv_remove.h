@@ -13,7 +13,7 @@ class Remove{
         void remove_file(string given_filename){
             try{
                 if(filesystem::remove(given_filename)){
-                    cout << "file " << given_filename << " removed";
+                    cout << "file " << given_filename << " removed" << "\n";
                 }
                 else{
                     cout << "failure";
