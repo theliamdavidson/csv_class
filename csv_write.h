@@ -30,7 +30,7 @@ class Write{
                             "Intermed LEI", "Intermed REI", "Lower LEI", "Lower REI"};
     string newFilename;
     int temp;
-    string int2str;
+    string int2str; 
     
     void populate_file(){
         fstream fout;
