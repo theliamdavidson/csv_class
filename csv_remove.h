@@ -18,7 +18,7 @@ class Remove{
                 else{
                     cout << "failure";
                 }
-                }
+            }
             catch(const std::filesystem::filesystem_error& err){
                 std::cout << "filesystem error: " << err.what() << '\n';
             }
