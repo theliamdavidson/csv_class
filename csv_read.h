@@ -9,7 +9,7 @@ using namespace std;
 #define CSV_READ_H
 class Read{
     public:
-        string filename, line, word;
+        string line, word;
         vector<vector<string>> content;
         vector<string> row;
         void print_func(){
@@ -20,7 +20,7 @@ class Read{
                 cout<<"\n";
             }
         }
-        void File_O(){
+        void File_O(string filename){
             fstream file (filename, ios::in);
 
             if(file.is_open()){
@@ -38,13 +38,6 @@ class Read{
                 cout<<"Could not open the file\n";
             }
             print_func();
-        }
-        Read(){
-            cout << "Enter the file name(without extension): ";
-            cin >> filename;
-            filename.append(".csv");
-            File_O();
-        }
-        
+        }        
 };
 #endif
