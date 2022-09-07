@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include <sstream>
 
+
 using namespace std;
 
 #ifndef CSV_WRITE_H
@@ -32,9 +33,9 @@ class Write{
     int temp;
     string int2str; 
     
+    
     void populate_file(){
-        fstream fout;
-        newFilename.append(".csv");
+        fstream fout;        
         fout.open(newFilename, ios::out | ios::app);
         // Anterograde pulsatility index, Anterograde volume flow, Retrograde volume flow, Retrograde pulsatility index
 
@@ -44,12 +45,17 @@ class Write{
             fout << create[i] << ',' << int2str[0] << int2str[1] <<',' << int2str[2] << int2str[3] << ',' << int2str[4] << int2str[5] <<',' << int2str[6] << int2str[7] << "\n";
         }
     }
+    
     public:
+        vector<string> created_file;
         Write(){
             cout << "Enter the name of the file you want to create(no extension): ";
             cin >> newFilename;
+            newFilename.append(".csv");
+            created_file.push_back(newFilename);
             populate_file();
         }
+        
 };
 
 
